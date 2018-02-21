@@ -1,14 +1,14 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-//import App from './App'
-import Users from './components/Users'
-import Test from './components/Test'
 
-//install via npm install vue-resource --save
-import vueResource from 'vue-resource'
 //npm install vue-router --save
 import vueRouter from 'vue-router'
+//install via npm install vue-resource --save
+import vueResource from 'vue-resource'
+import Vue from 'vue'
+import App from './App'
+import Users from './components/Users'
+import Test from './components/Test'
 
 
 Vue.config.productionTip = false
