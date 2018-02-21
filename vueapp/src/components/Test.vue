@@ -21,7 +21,7 @@
         <br>
         <label>Last Name: </label>
         <input type="text" v-model="user.lastName">
-
+        <h3>{{fullName}}</h3>
     </div>
 </template>
 
@@ -52,6 +52,11 @@
             },
             enterHit: function () {
                 console.log('You hit enter');
+            }
+        },
+        computed: {
+            fullName: function () {
+                return this.user.firstName + ' ' + this.user.lastName;
             }
         }
     }
