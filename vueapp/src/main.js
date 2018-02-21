@@ -2,11 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
 //npm install vue-router --save
-import vueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 //install via npm install vue-resource --save
 import vueResource from 'vue-resource'
 import Vue from 'vue'
-import App from './App'
+//import App from './App'
 import Users from './components/Users'
 import Test from './components/Test'
 
@@ -14,9 +14,9 @@ import Test from './components/Test'
 Vue.config.productionTip = false
 //Need to do this to import external library
 Vue.use(vueResource)
-Vue.use(vueRouter)
+Vue.use(VueRouter)
 
-const router = new vueRouter({
+const router = new VueRouter({
     mode: 'history',
     base: __dirname,
     routes: [
