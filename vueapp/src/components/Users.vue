@@ -1,6 +1,7 @@
 <template>
     <div class="users">
         <h1>Users</h1>
+        <p>Taken from https://jsonplaceholder.typicode.com/users</p>
         <form v-on:submit="addUser">
             <input type="text" v-model="newUser.name" placeholder="Enter name">
             <br>
@@ -29,6 +30,8 @@
             return {
                 newUser: {},
                 users: [
+
+                    /*
                     {
                         name: 'Mark Packham',
                         email: 'mpackham@email.com',
@@ -44,6 +47,7 @@
                         email: 'm3packham@email.com',
                         contacted: false
                     }
+                    */
                 ]
             }
         },
@@ -59,6 +63,12 @@
             deleteUser: function (user) {
                 this.users.splice(this.users.indexOf(user), 1);
             }
+        },
+        //we get created from vueResource
+        created: function () {
+            this.$http.get('https://jsonplaceholder.typicode.com/users').then(function (response) {
+                this.users = response.data;
+            });
         }
 
     }
