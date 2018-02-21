@@ -22,12 +22,20 @@
         <label>Last Name: </label>
         <input type="text" v-model="user.lastName">
         <h3>{{fullName}}</h3>
+        <h2>{{msg}}</h2>
     </div>
 </template>
 
 <script>
     export default {
         name: 'test',
+        //Properties (these can be added to App.vue
+        props: {
+            msg: {
+                type: String,
+                default: 'Foobar'
+            }
+        },
         data() {
             return {
                 title: 'Hello Mark',
@@ -54,6 +62,7 @@
                 console.log('You hit enter');
             }
         },
+        //Computed method
         computed: {
             fullName: function () {
                 return this.user.firstName + ' ' + this.user.lastName;
