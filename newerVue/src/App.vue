@@ -1,41 +1,20 @@
 <template>
   <div id="app">
-    <Todos v-bind:todos="todos" />
+    <Header />
+    <router-view/>
   </div>
 </template>
 
 <script>
-
-import Todos from './components/Todos';
-
+import Header from './components/layout/Header';
 export default {
-  name: 'app',
+  name:"app",
   components: {
-    Todos
-  },
-  data(){
-    return{
-      todos:[
-        {
-          id: 1,
-title:"Meow",
-completed:false
-        },
-                {
-          id: 2,
-title:"Moo",
-completed:true
-        },
-                {
-          id: 3,
-title:"Baa",
-completed:false
-        },
-      ]
-    }
+    Header
   }
 }
 </script>
+
 
 <style>
   * {
